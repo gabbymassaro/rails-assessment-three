@@ -1,6 +1,7 @@
 class PizzeriasController < ApplicationController
   def new
     @pizzeria = Pizzeria.new
+    @pizzeria.pizzas.build
   end
 
   def create
@@ -10,6 +11,7 @@ class PizzeriasController < ApplicationController
 
   def show
     @pizzeria = Pizzeria.find(params[:id])
+    @pizza = Pizza.new(pizzeria: @pizzeria)
   end
 
   def index
@@ -18,6 +20,6 @@ class PizzeriasController < ApplicationController
 
   private
   def pizzeria_params
-    params.require(:pizzeria).permit(:name,:address)
+    params.require(:pizzeria).permit(:name, :address, pizza_attributes: [:name, :description])
   end
 end

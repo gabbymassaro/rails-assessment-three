@@ -1,0 +1,13 @@
+<h1 style='margin-top:100px'> Record a new Pizza</h1>
+
+<div class='form-container'>
+  <%= form_with model: [@pizzeria, @pizza] do |f| %>
+  <%= f.hidden_field :pizzeria_id %>
+    <label>Pizza Name: <%= f.text_field :name %></label><br />
+
+    <label>Description: <%= f.text_field :description %></label><br />
+
+    <%= f.submit %>
+
+  <% end %>
+</div>
