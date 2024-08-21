@@ -41,8 +41,7 @@ class PizzasController < ApplicationController
   end
 
   def set_pizza
-    # @pizza = @pizzeria.pizzas.find(params[:id])
-    @pizza = @pizzeria.pizzas
+    @pizza = @pizzeria.pizzas.find(params[:id])
   end
 
   def pizza_params
