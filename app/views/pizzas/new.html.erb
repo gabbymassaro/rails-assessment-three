@@ -3,6 +3,7 @@
 
 <div class='form-container'>
   <%= form_with model: [@pizzeria, @pizza] do |f| %>
+    <%= f.hidden_field :pizzeria_id %>
 
     <label>Name<%= f.text_field :name %></label><br />
 
