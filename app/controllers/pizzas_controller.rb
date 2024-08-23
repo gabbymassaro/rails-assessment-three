@@ -11,6 +11,7 @@ class PizzasController < ApplicationController
     if @pizza.save
       redirect_to pizzeria_pizza_path(@pizza.pizzeria, @pizza)
     else
+      flash.now.alert = @pizza.errors.full_messages.to_sentence
       render :new
     end
   end
